@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.10'
+}
+
+group 'okos'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+// https://mvnrepository.com/artifact/args4j/args4j
+    compile group: 'args4j', name: 'args4j', version: '2.33'
+// https://mvnrepository.com/artifact/org.pantsbuild/args4j
+    compile group: 'org.pantsbuild', name: 'args4j', version: '0.0.19'
+// https://mvnrepository.com/artifact/commons-cli/commons-cli
+    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
